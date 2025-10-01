@@ -1,7 +1,7 @@
 {
-  "name": "webpack-template",
+  "name": "doodly-do",
   "version": "1.0.0",
-  "description": "Webpack Template",
+  "description": "Todo List",
   "main": "index.js",
   "scripts": {
     "build": "webpack --config webpack.prod.js",
