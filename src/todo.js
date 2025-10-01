@@ -6,12 +6,4 @@ export default class Todo {
     this.note = note;
     this.isComplete = false;
   }
-
-  complete() {
-    this.isComplete = true;
-  }
-
-  incomplete() {
-    this.isComplete = false;
-  }
 };
