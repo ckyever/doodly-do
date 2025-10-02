@@ -1,9 +1,11 @@
 export default class Todo {
-  constructor(title, description, dueDate, note) {
-    this.title = title;
-    this.description = description;
+  constructor(text, dueDate) {
+    this.text = text;
     this.dueDate = dueDate;
-    this.note = note;
     this.isComplete = false;
+  }
+
+  toggle() {
+    this.isComplete = !this.isComplete;
   }
 };
