@@ -125,4 +125,6 @@ body {
   width: var(--card-width);
   background-color: var(--list-card-color);
   box-shadow: 1px 1px 3px var(--list-card-shadow);
+  border-radius: 50px;
+  padding: 20px;
 }
