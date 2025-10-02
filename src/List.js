@@ -17,4 +17,4 @@ export default class List {
       this.#todos.splice(index, 1);
     }
   }
-}
+};
