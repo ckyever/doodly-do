@@ -1,4 +1,5 @@
 import List from "./List.js";
+import {ListDisplay} from "./ListDisplay.js";
 
 class ListService {
   constructor() {
@@ -25,7 +26,7 @@ class ListService {
       this.lists.push(newList);
       newListForm.reset();
       newListDialog.close();
-      console.table(this.lists); // CKYTODO Remove
+      ListDisplay.show(this.lists);      
     });
   }
 }
