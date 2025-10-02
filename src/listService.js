@@ -4,9 +4,10 @@ import {ListDisplay} from "./ListDisplay.js";
 class ListService {
   constructor() {
     // CKYTODO Placeholder for development only
-    this.lists = [new List("one"), new List("two"), new List("three"), new List("free")];
+    this.lists = [new List("one"), new List("two"), new List("three"), new List("four")];
     ListDisplay.show(this.lists);      
 
+    const listBoard = document.querySelector("div.list-board");
     const createListButton = document.querySelector("button.create-list");
     const newListDialog = document.querySelector("dialog.list-creator");
     const newListForm = newListDialog.querySelector("form.new-list");
@@ -29,6 +30,14 @@ class ListService {
       newListForm.reset();
       newListDialog.close();
       ListDisplay.show(this.lists);      
+    });
+
+    listBoard.addEventListener("click", event => {
+      if (event.target.classList.contains("add-todo")) {
+        const list = event.target.parentElement;
+        const listId = list ? list.id : null;
+        console.log(`Add todo for ${listId}`);
+      }
     });
   }
 }

@@ -1,9 +1,15 @@
 export default class List {
   #todos;
+  #id;
 
   constructor(title) {
     this.title = title;
     this.#todos = [];
+    this.#id = crypto.randomUUID();
+  }
+
+  get id() {
+    return this.#id;
   }
 
   addTodo(todo) {
