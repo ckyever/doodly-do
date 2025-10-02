@@ -79,6 +79,22 @@ h6 {
 
 /* End of CSS Reset */
 
+:root {
+  --main-background-color: #FAF9F5;
+  --note-card-color: #FFFFFF;
+  --main-text-color: #1F1F1F;
+  --theme-name: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --main-background-color: #262624;;
+    --note-card-color: #30302E;
+    --main-text-color: #F9F8F6;
+    --theme-name: dark;
+  }
+}
+
 dialog {
   /* Center the dialog */
   position: fixed;
