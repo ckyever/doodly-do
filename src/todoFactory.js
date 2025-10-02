@@ -1,4 +1,4 @@
-import Todo from "./todos.js";
+import Todo from "./Todos.js";
 
 class TodoFactory {
   createTodo(text, details) {
