@@ -3,7 +3,9 @@ import {ListDisplay} from "./ListDisplay.js";
 
 class ListService {
   constructor() {
-    this.lists = [];
+    // CKYTODO Placeholder for development only
+    this.lists = [new List("one"), new List("two"), new List("three"), new List("free")];
+    ListDisplay.show(this.lists);      
 
     const createListButton = document.querySelector("button.create-list");
     const newListDialog = document.querySelector("dialog.list-creator");
