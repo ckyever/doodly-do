@@ -81,24 +81,46 @@ h6 {
 
 :root {
   --main-background-color: #FAF9F5;
-  --note-card-color: #FFFFFF;
+  --list-card-color: #FFFFFF;
   --main-text-color: #1F1F1F;
   --theme-name: light;
+
+  --card-height: 500px;
+  --card-width: 350px;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --main-background-color: #262624;;
-    --note-card-color: #30302E;
+    --list-card-color: #30302E;
     --main-text-color: #F9F8F6;
     --theme-name: dark;
   }
 }
 
+/* Center the dialog */
 dialog {
-  /* Center the dialog */
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+body {
+  background-color: var(--main-background-color);
+  color: var(--main-text-color);
+}
+
+.list-board {
+  margin: 40px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(var(--card-width), 1fr));
+  gap: 20px;
+}
+
+.list-card {
+  height: var(--card-height);
+  width: var(--card-width);
+  background-color: var(--list-card-color);
+  box-shadow: 1px 1px 3px color-mix(in srgb, var(--list-card-color) 80%, black);
 }
