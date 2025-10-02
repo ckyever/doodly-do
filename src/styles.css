@@ -82,6 +82,7 @@ h6 {
 :root {
   --main-background-color: #FAF9F5;
   --list-card-color: #FFFFFF;
+  --list-card-shadow: color-mix(in srgb, var(--list-card-color) 80%, black);
   --main-text-color: #1F1F1F;
   --theme-name: light;
 
@@ -93,6 +94,7 @@ h6 {
   :root {
     --main-background-color: #262624;;
     --list-card-color: #30302E;
+    --list-card-shadow: color-mix(in srgb, var(--list-card-color) 95%, white);
     --main-text-color: #F9F8F6;
     --theme-name: dark;
   }
@@ -122,5 +124,5 @@ body {
   height: var(--card-height);
   width: var(--card-width);
   background-color: var(--list-card-color);
-  box-shadow: 1px 1px 3px color-mix(in srgb, var(--list-card-color) 80%, black);
+  box-shadow: 1px 1px 3px var(--list-card-shadow);
 }
