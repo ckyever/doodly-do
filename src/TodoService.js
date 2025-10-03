@@ -2,12 +2,6 @@ import todoFactory from "./todoFactory.js";
 import Storage from "./Storage.js"
 import {createTodoElement} from "./TodoDisplay.js";
 
-// Create an input element against the given list
-// Create a Todo object instance
-// Add event listener for input
-// Once there is data update respective Todo object with data
-// Needs to still update the same one if user updates it
-
 class TodoService {
   addTodo(listElement) {
     const todo = todoFactory.createTodo();

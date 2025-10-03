@@ -5,7 +5,6 @@ import Storage from "./Storage.js"
 
 class ListService {
   constructor() {
-    // CKYTODO Placeholder for development only
     ListDisplay.show(Storage.lists);      
 
     const listBoard = document.querySelector("div.list-board");
