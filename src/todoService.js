@@ -1,6 +1,6 @@
-import todoFactory from "./todoFactory.js";
+import {createTodoElement} from "./todoDisplay.js";
 import Storage from "./Storage.js"
-import {createTodoElement} from "./TodoDisplay.js";
+import todoFactory from "./todoFactory.js";
 
 class TodoService {
   addTodo(listElement) {

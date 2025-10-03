@@ -1,11 +1,11 @@
 import List from "./List.js";
-import {ListDisplay} from "./ListDisplay.js";
-import TodoService from "./TodoService.js";
+import {listDisplay} from "./listDisplay.js";
 import Storage from "./Storage.js"
+import todoService from "./todoService.js";
 
 class ListService {
   initialise() {
-    ListDisplay.show(Storage.lists);      
+    listDisplay.show(Storage.lists);      
     this.addEventListeners();
   }
 
@@ -32,14 +32,14 @@ class ListService {
       Storage.lists.push(newList);
       newListForm.reset();
       newListDialog.close();
-      ListDisplay.show(Storage.lists);      
+      listDisplay.show(Storage.lists);      
     });
 
     listBoard.addEventListener("click", event => {
       if (event.target.classList.contains("add-todo")) {
         const listCard = event.target.parentElement;
         const listElement = listCard.querySelector("ul.list");
-        const todo = TodoService.addTodo(listElement);
+        const todo = todoService.addTodo(listElement);
         const listId = listElement ? listCard.id : null;
         if (listId) {
           const list = Storage.lists[Storage.lists.findIndex(list => list.id === listId)];
@@ -48,7 +48,7 @@ class ListService {
       }
     });
 
-    TodoService.listenForTodoUpdates(listBoard);
+    todoService.listenForTodoUpdates(listBoard);
   }
 }
 

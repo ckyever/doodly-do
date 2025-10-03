@@ -1,6 +1,6 @@
-import {createTodoElement} from "./TodoDisplay.js";
+import {createTodoElement} from "./todoDisplay.js";
 
-export const ListDisplay = {
+export const listDisplay = {
   show(lists) {
     const listBoard = document.querySelector("div.list-board");
     listBoard.innerHTML = ""; // Clear out all current lists first
