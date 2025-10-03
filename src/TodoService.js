@@ -1,4 +1,5 @@
-import todoFactory from './todoFactory.js';
+import todoFactory from "./todoFactory.js";
+import Storage from "./Storage.js"
 
 // Create an input element against the given list
 // Create a Todo object instance

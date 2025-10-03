@@ -1,12 +1,12 @@
 import List from "./List.js";
 import {ListDisplay} from "./ListDisplay.js";
 import TodoService from "./TodoService.js";
+import Storage from "./Storage.js"
 
 class ListService {
   constructor() {
     // CKYTODO Placeholder for development only
-    this.lists = [new List("one"), new List("two"), new List("three"), new List("four")];
-    ListDisplay.show(this.lists);      
+    ListDisplay.show(Storage.lists);      
 
     const listBoard = document.querySelector("div.list-board");
     const createListButton = document.querySelector("button.create-list");
@@ -27,10 +27,10 @@ class ListService {
     newListForm.addEventListener("submit", (event) => {
       event.preventDefault();
       const newList = new List(newListTitle.value);
-      this.lists.push(newList);
+      Storage.lists.push(newList);
       newListForm.reset();
       newListDialog.close();
-      ListDisplay.show(this.lists);      
+      ListDisplay.show(Storage.lists);      
     });
 
     listBoard.addEventListener("click", event => {
@@ -39,7 +39,7 @@ class ListService {
         const todo = TodoService.addTodo(listElement);
         const listId = listElement ? listElement.id : null;
         if (listId) {
-          const list = this.lists[this.lists.findIndex(list => list.id === listId)];
+          const list = Storage.lists[Storage.lists.findIndex(list => list.id === listId)];
           list.addTodo(todo);
         }
       }
