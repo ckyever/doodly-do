@@ -12,6 +12,10 @@ export default class List {
     return this.#id;
   }
 
+  get todos() {
+    return this.#todos;
+  }
+
   addTodo(todo) {
     this.#todos.push(todo);
   }
