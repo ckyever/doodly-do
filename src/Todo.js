@@ -1,8 +1,8 @@
 export default class Todo {
   #id;
 
-  constructor(text = "", details = {}) {
-    this.text = text;
+  constructor(title = "", details = {}) {
+    this.title = title;
     this.dueDate = details.dueDate ?? null;
     this.isComplete = false;
     this.#id = crypto.randomUUID();

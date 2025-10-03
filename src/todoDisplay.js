@@ -3,9 +3,9 @@ export const createTodoElement = (todo) => {
     listItem.classList = "list-item";
 
     const todoInput = document.createElement("input");
-    todoInput.classList = "todo-text";
+    todoInput.classList = "todo-title";
     todoInput.id = todo.id;
-    todoInput.value = todo.text;
+    todoInput.value = todo.title;
 
     listItem.appendChild(todoInput);
 
