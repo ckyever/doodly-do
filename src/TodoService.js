@@ -26,7 +26,7 @@ class TodoService {
         const todoId = event.target.id;
         const todoIndex = Storage.lists[listIndex].todos.findIndex(todo => todo.id === todoId);
 
-        Storage.lists[todoIndex].todos[todoIndex].text = event.target.value;
+        Storage.lists[listIndex].todos[todoIndex].text = event.target.value;
       }
     });
   }
