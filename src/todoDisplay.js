@@ -1,10 +1,10 @@
 export const createTodoElement = (todo) => {
     const listItem = document.createElement("li");
     listItem.classList = "list-item";
+    listItem.id = todo.id;
 
     const todoTitle = document.createElement("input");
     todoTitle.classList = "todo-title";
-    todoTitle.id = todo.id;
     todoTitle.value = todo.title;
     todoTitle.placeholder = "Title";
     listItem.appendChild(todoTitle);
