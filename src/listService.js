@@ -4,9 +4,12 @@ import TodoService from "./TodoService.js";
 import Storage from "./Storage.js"
 
 class ListService {
-  constructor() {
+  initialise() {
     ListDisplay.show(Storage.lists);      
+    this.addEventListeners();
+  }
 
+  addEventListeners() {
     const listBoard = document.querySelector("div.list-board");
     const createListButton = document.querySelector("button.create-list");
     const newListDialog = document.querySelector("dialog.list-creator");
