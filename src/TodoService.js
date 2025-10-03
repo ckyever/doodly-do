@@ -1,5 +1,6 @@
 import todoFactory from "./todoFactory.js";
 import Storage from "./Storage.js"
+import {createTodoElement} from "./TodoDisplay.js";
 
 // Create an input element against the given list
 // Create a Todo object instance
@@ -10,17 +11,15 @@ import Storage from "./Storage.js"
 class TodoService {
   addTodo(listElement) {
     const todo = todoFactory.createTodo();
-    const todoInput = document.createElement("input");
-    todoInput.classList = "todo-text";
-    todoInput.id = todo.id;
-    listElement.appendChild(todoInput);
+    listElement.appendChild(createTodoElement(todo));
     return todo;
   }
 
   listenForTodoUpdates(listBoard) {
     listBoard.addEventListener("input", event => {
       if (event.target.classList.contains("todo-text")) {
-        const listId = event.target.parentElement.id;
+        const listElement = event.target.closest(".list-card");
+        const listId = listElement.id;
         const listIndex = Storage.lists.findIndex(list => list.id === listId);
 
         const todoId = event.target.id;

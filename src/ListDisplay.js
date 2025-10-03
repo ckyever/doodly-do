@@ -1,3 +1,5 @@
+import {createTodoElement} from "./TodoDisplay.js";
+
 export const ListDisplay = {
   show(lists) {
     const listBoard = document.querySelector("div.list-board");
@@ -20,8 +22,13 @@ export const ListDisplay = {
 
       const list = document.createElement("ul");
       list.classList = "list"
-      listCard.appendChild(list);
 
+      currentList.todos.forEach(todo => {
+        const todoElement = createTodoElement(todo);
+        list.appendChild(todoElement);
+      });
+
+      listCard.appendChild(list);
       listBoard.appendChild(listCard);
     });
   }

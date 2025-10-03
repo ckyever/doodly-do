@@ -35,9 +35,10 @@ class ListService {
 
     listBoard.addEventListener("click", event => {
       if (event.target.classList.contains("add-todo")) {
-        const listElement = event.target.parentElement;
+        const listCard = event.target.parentElement;
+        const listElement = listCard.querySelector("ul.list");
         const todo = TodoService.addTodo(listElement);
-        const listId = listElement ? listElement.id : null;
+        const listId = listElement ? listCard.id : null;
         if (listId) {
           const list = Storage.lists[Storage.lists.findIndex(list => list.id === listId)];
           list.addTodo(todo);
