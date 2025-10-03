@@ -26,6 +26,10 @@ class TodoService {
         if (event.target.classList.contains("todo-title")) {
           Storage.lists[listIndex].todos[todoIndex].title = event.target.value;
         }
+
+        if (event.target.classList.contains("todo-description")) {
+          Storage.lists[listIndex].todos[todoIndex].description = event.target.value;
+        }
       }
     });
   }
