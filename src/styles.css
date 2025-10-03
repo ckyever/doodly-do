@@ -113,6 +113,15 @@ body {
   color: var(--main-text-color);
 }
 
+ul {
+  padding: 0;
+}
+
+li {
+  padding: 4px;
+  list-style: none;
+}
+
 .list-board {
   margin: 40px;
   display: grid;
