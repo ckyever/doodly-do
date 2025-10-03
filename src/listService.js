@@ -1,5 +1,6 @@
 import List from "./List.js";
 import {ListDisplay} from "./ListDisplay.js";
+import TodoService from "./TodoService.js";
 
 class ListService {
   constructor() {
@@ -34,11 +35,17 @@ class ListService {
 
     listBoard.addEventListener("click", event => {
       if (event.target.classList.contains("add-todo")) {
-        const list = event.target.parentElement;
-        const listId = list ? list.id : null;
-        console.log(`Add todo for ${listId}`);
+        const listElement = event.target.parentElement;
+        const todo = TodoService.addTodo(listElement);
+        const listId = listElement ? listElement.id : null;
+        if (listId) {
+          const list = this.lists[this.lists.findIndex(list => list.id === listId)];
+          list.addTodo(todo);
+        }
       }
     });
+
+    TodoService.listenForTodoUpdates(listBoard);
   }
 }
 

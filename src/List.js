@@ -13,7 +13,7 @@ export default class List {
   }
 
   addTodo(todo) {
-    this.#todos.append(todo);
+    this.#todos.push(todo);
   }
 
   deleteTodo(todo) {
