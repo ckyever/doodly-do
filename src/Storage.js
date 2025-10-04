@@ -2,7 +2,7 @@ import Todo from "./Todo.js"
 import List from "./List.js"
 
 export default class Storage {
-  static lists = [];
+  static lists = [new List("Todo")];
   static localStorageKey = "todoLists";
 
   static load() {
@@ -10,15 +10,19 @@ export default class Storage {
     if (data) {
       this.lists = JSON.parse(data);
 
-      // Assign prototypes again
-      this.lists.forEach(list => {
-        Object.setPrototypeOf(list, List.prototype);
-        if (list.todos) {
-          list.todos.forEach(todo => {
-            Object.setPrototypeOf(todo, Todo.prototype);
-          });
-        }
-      });
+      if (this.lists.length === 0) {
+        this.lists = [new List("Todo")];
+      } else {
+        // Assign prototypes again
+        this.lists.forEach(list => {
+          Object.setPrototypeOf(list, List.prototype);
+          if (list.todos) {
+            list.todos.forEach(todo => {
+              Object.setPrototypeOf(todo, Todo.prototype);
+            });
+          }
+        });
+      }
     }
   }
 
