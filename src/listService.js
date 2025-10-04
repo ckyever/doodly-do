@@ -49,6 +49,7 @@ class ListService {
     });
 
     todoService.listenForTodoUpdates(listBoard);
+    todoService.listenForTodoDelete(listBoard);
   }
 }
 
