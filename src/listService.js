@@ -49,6 +49,8 @@ class ListService {
           const todo = todoService.addTodo(listElement);
           const list = Storage.lists[listIndex];
           list.addTodo(todo);
+          const todoInputs = listElement.querySelectorAll(".todo-title");
+          todoInputs[todoInputs.length - 1].focus();
         }
 
         if (event.target.classList.contains("delete-list")) {
@@ -57,6 +59,28 @@ class ListService {
         }
       }
     });
+
+    listBoard.addEventListener("focusout", event => {
+      const listItem = event.target.closest(".list-item");
+      const nextFocus = event.relatedTarget;
+      if (listItem && (!nextFocus || !listItem.contains(nextFocus))) {
+        listItem.classList.remove("expanded");
+      }
+    });
+
+    listBoard.addEventListener("focusin", event => {
+      if (
+        event.target.classList.contains("todo-title") ||
+        event.target.classList.contains("due-date")
+      ) {
+        const listItem = event.target.closest(".list-item");
+        if (listItem) {
+          listItem.classList.add("expanded");
+        }
+      }
+    });
+
+
 
     todoService.listenForTodoUpdates(listBoard);
     todoService.listenForTodoButtons(listBoard);

@@ -2,7 +2,7 @@ import { format as formatDate } from "date-fns";
 
 export const createTodoElement = (todo) => {
     const listItem = document.createElement("li");
-    listItem.classList = "list-item expanded";
+    listItem.classList = "list-item";
     listItem.id = todo.id;
 
     const expandButton = document.createElement("button");
@@ -23,6 +23,7 @@ export const createTodoElement = (todo) => {
     todoTitle.classList = "todo-title";
     todoTitle.value = todo.title;
     todoTitle.placeholder = "Title";
+    todoTitle.focus();
     textContainer.appendChild(todoTitle);
 
     const todoDescription = document.createElement("input");
