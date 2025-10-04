@@ -11,15 +11,20 @@ export const listDisplay = {
       listCard.classList = "list-card";
       listCard.id = currentList.id;
 
+      const titleHeader = document.createElement("div");
+      titleHeader.classList = "list-header";
+
       const listTitle = document.createElement("h2");
-      listTitle.classList = "list-title"
+      listTitle.classList = "list-title";
       listTitle.textContent = currentList.title;
-      listCard.appendChild(listTitle);
+      titleHeader.appendChild(listTitle);
 
       const deleteList = document.createElement("button");
       deleteList.classList = "delete-list";
       deleteList.textContent = "X";
-      listCard.appendChild(deleteList);
+      titleHeader.appendChild(deleteList);
+
+      listCard.appendChild(titleHeader);
 
       const addTodoButton = document.createElement("button");
       addTodoButton.type = "button";

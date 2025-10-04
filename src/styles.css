@@ -130,7 +130,6 @@ li {
 }
 
 .list-card {
-  position: relative;
   min-height: var(--card-height);
   width: var(--card-width);
   background-color: var(--list-card-color);
@@ -138,6 +137,18 @@ li {
   border-radius: 50px;
   padding: 20px;
   align-self: start;
+}
+
+.list-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.list-title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .list-item {
@@ -157,9 +168,9 @@ li {
 }
 
 .delete-list {
-  position: absolute;
   top: 20px;
   right: 24px;
+  margin-left: auto;
 }
 
 .list-item .expand-todo::after {
