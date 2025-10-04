@@ -13,7 +13,8 @@ class TodoService {
     listBoard.addEventListener("input", event => {
       if (
         event.target.classList.contains("todo-title") || 
-        event.target.classList.contains("todo-description")
+        event.target.classList.contains("todo-description") ||
+        event.target.classList.contains("is-complete")
       ) {
         const listElement = event.target.closest(".list-card");
         const listId = listElement.id;
@@ -29,6 +30,12 @@ class TodoService {
 
         if (event.target.classList.contains("todo-description")) {
           Storage.lists[listIndex].todos[todoIndex].description = event.target.value;
+        }
+
+        if (event.target.classList.contains("is-complete")) {
+          console.log("ckytodo checked=", event.target.checked);
+          Storage.lists[listIndex].todos[todoIndex].isComplete = event.target.checked;
+          console.log(Storage.lists);
         }
       }
     });

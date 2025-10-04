@@ -3,17 +3,28 @@ export const createTodoElement = (todo) => {
     listItem.classList = "list-item";
     listItem.id = todo.id;
 
+    const checkBox = document.createElement("input");
+    checkBox.type = "checkbox";
+    checkBox.classList = "is-complete";
+    checkBox.checked = todo.isComplete;
+    listItem.appendChild(checkBox);
+
+    const textContainer = document.createElement("div");
+    textContainer.classList = "text-container";
+
     const todoTitle = document.createElement("input");
     todoTitle.classList = "todo-title";
     todoTitle.value = todo.title;
     todoTitle.placeholder = "Title";
-    listItem.appendChild(todoTitle);
+    textContainer.appendChild(todoTitle);
 
     const todoDescription = document.createElement("input");
     todoDescription.classList = "todo-description";
     todoDescription.value = todo.description;
     todoDescription.placeholder = "Description";
-    listItem.appendChild(todoDescription);
+    textContainer.appendChild(todoDescription);
+
+    listItem.appendChild(textContainer);
 
     return listItem;
 };
