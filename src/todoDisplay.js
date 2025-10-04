@@ -1,3 +1,5 @@
+import {format as formatDate} from "date-fns";
+
 export const createTodoElement = (todo) => {
     const listItem = document.createElement("li");
     listItem.classList = "list-item";
@@ -23,6 +25,17 @@ export const createTodoElement = (todo) => {
     todoDescription.value = todo.description;
     todoDescription.placeholder = "Description";
     textContainer.appendChild(todoDescription);
+
+    const dueDateLabel = document.createElement("label");
+    dueDateLabel.classList = "due-date-label";
+    dueDateLabel.textContent = "Due Date";
+    textContainer.appendChild(dueDateLabel);
+
+    const dueDate = document.createElement("input");
+    dueDate.type = "date";
+    dueDate.classList = "due-date";
+    dueDate.value = todo.dueDate ?? formatDate(new Date(), "yyyy-MM-dd");
+    dueDateLabel.appendChild(dueDate);
 
     listItem.appendChild(textContainer);
 

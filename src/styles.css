@@ -142,3 +142,14 @@ li {
   display: flex;
   gap: 8px;
 }
+
+.text-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.due-date-label {
+  display: flex;
+  justify-content: space-between;
+}
