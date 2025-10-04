@@ -84,6 +84,7 @@ h6 {
   --list-card-color: #FFFFFF;
   --list-card-shadow: color-mix(in srgb, var(--list-card-color) 80%, black);
   --main-text-color: #1F1F1F;
+  --icon-filter: invert(0);
   --theme-name: light;
 
   --card-height: 375px;
@@ -96,6 +97,7 @@ h6 {
     --list-card-color: #30302E;
     --list-card-shadow: color-mix(in srgb, var(--list-card-color) 95%, white);
     --main-text-color: #F9F8F6;
+    --icon-filter: invert(1);
     --theme-name: dark;
   }
 }
@@ -132,6 +134,11 @@ button {
   margin: 0;
   background-color: transparent;
   border: none;
+  color: var(--main-text-color);
+}
+
+.icon {
+  filter: var(--icon-filter);
 }
 
 .create-list {
@@ -140,7 +147,7 @@ button {
   margin: 20px;
 }
 
-.create-list-icon {
+.create-list.icon {
   height: 40px;
 }
 
