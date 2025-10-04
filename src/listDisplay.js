@@ -1,3 +1,4 @@
+import addTodoIcon from "./assets/add-todo.svg";
 import { createTodoElement } from "./todoDisplay.js";
 import deleteListIcon from "./assets/delete-list.svg";
 import Storage from "./Storage.js";
@@ -33,7 +34,12 @@ export const listDisplay = {
       const addTodoButton = document.createElement("button");
       addTodoButton.type = "button";
       addTodoButton.classList = "add-todo";
-      addTodoButton.textContent = "Add a Todo";
+      const addTodoImage = document.createElement("img");
+      addTodoImage.classList = "add-todo icon";
+      addTodoImage.src = addTodoIcon;
+      addTodoButton.appendChild(addTodoImage);
+      const buttonText = document.createTextNode("Add a Todo");
+      addTodoButton.appendChild(buttonText);
       listCard.appendChild(addTodoButton);
 
       const list = document.createElement("ul");

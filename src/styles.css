@@ -87,6 +87,8 @@ h6 {
   --icon-filter: invert(0);
   --theme-name: light;
 
+  --accent-color: #CD7E5C;
+
   --card-height: 375px;
   --card-width: 375px;
 }
@@ -159,6 +161,9 @@ button {
 }
 
 .list-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
   min-height: var(--card-height);
   width: var(--card-width);
   background-color: var(--list-card-color);
@@ -224,4 +229,15 @@ button {
 
 .delete-todo.icon {
   min-width: 20px;
+}
+
+.add-todo {
+  display: flex;
+  white-space: nowrap;
+  color: var(--accent-color);
+}
+
+.add-todo.icon {
+  width: 30px;
+  filter: none; /* Stay the same colour in dark mode */
 }
