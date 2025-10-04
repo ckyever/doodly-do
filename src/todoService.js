@@ -9,6 +9,18 @@ class TodoService {
     return todo;
   }
 
+  getTodoIndexFromEvent(event) {
+    const listElement = event.target.closest(".list-card");
+    const listId = listElement.id;
+    const listIndex = Storage.lists.findIndex(list => list.id === listId);
+
+    const listItem = event.target.closest(".list-item")
+    const todoId = listItem.id;
+    const todoIndex = Storage.lists[listIndex].todos.findIndex(todo => todo.id === todoId);
+
+    return {listIndex, todoIndex};
+  }
+
   listenForTodoUpdates(listBoard) {
     listBoard.addEventListener("input", event => {
       if (
@@ -17,13 +29,7 @@ class TodoService {
         event.target.classList.contains("todo-description") ||
         event.target.classList.contains("due-date")
       ) {
-        const listElement = event.target.closest(".list-card");
-        const listId = listElement.id;
-        const listIndex = Storage.lists.findIndex(list => list.id === listId);
-
-        const listItem = event.target.closest(".list-item")
-        const todoId = listItem.id;
-        const todoIndex = Storage.lists[listIndex].todos.findIndex(todo => todo.id === todoId);
+        const {listIndex, todoIndex} = this.getTodoIndexFromEvent(event);
 
         if (event.target.classList.contains("todo-title")) {
           Storage.lists[listIndex].todos[todoIndex].title = event.target.value;
