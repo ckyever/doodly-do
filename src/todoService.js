@@ -1,7 +1,7 @@
-import {createTodoElement} from "./todoDisplay.js";
+import { createTodoElement } from "./todoDisplay.js";
 import Storage from "./Storage.js"
 import todoFactory from "./todoFactory.js";
-import {listDisplay} from "./listDisplay.js";
+import { listDisplay } from "./listDisplay.js";
 
 class TodoService {
   addTodo(listElement) {
@@ -19,7 +19,7 @@ class TodoService {
     const todoId = listItem.id;
     const todoIndex = Storage.lists[listIndex].todos.findIndex(todo => todo.id === todoId);
 
-    return {listIndex, todoIndex};
+    return { listIndex, todoIndex };
   }
 
   listenForTodoUpdates(listBoard) {
@@ -30,7 +30,7 @@ class TodoService {
         event.target.classList.contains("todo-description") ||
         event.target.classList.contains("due-date")
       ) {
-        const {listIndex, todoIndex} = this.getTodoIndexFromEvent(event);
+        const { listIndex, todoIndex } = this.getTodoIndexFromEvent(event);
 
         if (event.target.classList.contains("todo-title")) {
           Storage.lists[listIndex].todos[todoIndex].title = event.target.value;

@@ -1,4 +1,4 @@
-import {createTodoElement} from "./todoDisplay.js";
+import { createTodoElement } from "./todoDisplay.js";
 
 export const listDisplay = {
   show(lists) {

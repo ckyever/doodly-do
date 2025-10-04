@@ -1,5 +1,5 @@
 import List from "./List.js";
-import {listDisplay} from "./listDisplay.js";
+import { listDisplay } from "./listDisplay.js";
 import Storage from "./Storage.js"
 import todoService from "./todoService.js";
 

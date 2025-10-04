@@ -1,4 +1,4 @@
-import {format as formatDate} from "date-fns";
+import { format as formatDate } from "date-fns";
 
 export const createTodoElement = (todo) => {
     const listItem = document.createElement("li");
