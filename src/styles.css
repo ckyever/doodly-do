@@ -87,7 +87,7 @@ h6 {
   --theme-name: light;
 
   --card-height: 500px;
-  --card-width: 350px;
+  --card-width: 375px;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -131,7 +131,7 @@ li {
 
 .list-card {
   position: relative;
-  height: var(--card-height);
+  min-height: var(--card-height);
   width: var(--card-width);
   background-color: var(--list-card-color);
   box-shadow: 0.5px 0.5px 5px var(--list-card-shadow);
