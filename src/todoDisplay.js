@@ -1,3 +1,4 @@
+import deleteIcon from "./assets/delete.svg";
 import { format as formatDate } from "date-fns";
 
 export const createTodoElement = (todo) => {
@@ -47,7 +48,11 @@ export const createTodoElement = (todo) => {
     const deleteTodo = document.createElement("button");
     deleteTodo.type = "button";
     deleteTodo.classList = "delete-todo";
-    deleteTodo.textContent = "X";
+    const deleteImage = document.createElement("img");
+    deleteImage.classList = "delete-todo icon";
+    deleteImage.src = deleteIcon;
+    deleteTodo.appendChild(deleteImage);
+
     listItem.append(deleteTodo);
 
     return listItem;

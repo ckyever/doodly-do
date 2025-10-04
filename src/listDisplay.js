@@ -1,6 +1,6 @@
 import { createTodoElement } from "./todoDisplay.js";
-import Storage from "./Storage.js";
 import deleteListIcon from "./assets/delete-list.svg";
+import Storage from "./Storage.js";
 
 export const listDisplay = {
   show() {
