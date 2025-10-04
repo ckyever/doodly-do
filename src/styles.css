@@ -137,6 +137,7 @@ li {
   box-shadow: 0.5px 0.5px 5px var(--list-card-shadow);
   border-radius: 50px;
   padding: 20px;
+  align-self: start;
 }
 
 .list-item {
