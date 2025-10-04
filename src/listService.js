@@ -8,7 +8,7 @@ class ListService {
     listDisplay.show(Storage.lists);      
     this.addEventListeners();
   }
-
+  
   addEventListeners() {
     const listBoard = document.querySelector("div.list-board");
     const createListButton = document.querySelector("button.create-list");
@@ -36,14 +36,24 @@ class ListService {
     });
 
     listBoard.addEventListener("click", event => {
-      if (event.target.classList.contains("add-todo")) {
+      if (
+        event.target.classList.contains("add-todo") ||
+        event.target.classList.contains("delete-list")
+      ) {
         const listCard = event.target.closest(".list-card");
         const listElement = listCard.querySelector("ul.list");
-        const todo = todoService.addTodo(listElement);
         const listId = listElement ? listCard.id : null;
-        if (listId) {
-          const list = Storage.lists[Storage.lists.findIndex(list => list.id === listId)];
+        const listIndex = Storage.lists.findIndex(list => list.id === listId)
+
+        if (event.target.classList.contains("add-todo")) {
+          const todo = todoService.addTodo(listElement);
+          const list = Storage.lists[listIndex];
           list.addTodo(todo);
+        }
+
+        if (event.target.classList.contains("delete-list")) {
+          Storage.lists.splice(listIndex, 1);
+          listDisplay.show(Storage.lists);
         }
       }
     });

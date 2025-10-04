@@ -130,6 +130,7 @@ li {
 }
 
 .list-card {
+  position: relative;
   height: var(--card-height);
   width: var(--card-width);
   background-color: var(--list-card-color);
@@ -152,4 +153,10 @@ li {
 .due-date-label {
   display: flex;
   justify-content: space-between;
+}
+
+.delete-list {
+  position: absolute;
+  top: 20px;
+  right: 24px;
 }

@@ -15,7 +15,13 @@ export const listDisplay = {
       listTitle.textContent = currentList.title;
       listCard.appendChild(listTitle);
 
+      const deleteList = document.createElement("button");
+      deleteList.classList = "delete-list";
+      deleteList.textContent = "X";
+      listCard.appendChild(deleteList);
+
       const addTodoButton = document.createElement("button");
+      addTodoButton.type = "button";
       addTodoButton.classList = "add-todo";
       addTodoButton.textContent = "Add a Todo";
       listCard.appendChild(addTodoButton);
