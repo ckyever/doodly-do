@@ -127,6 +127,13 @@ li {
   list-style: none;
 }
 
+button {
+  padding: 0;
+  margin: 0;
+  background-color: transparent;
+  border: none;
+}
+
 .create-list {
   display: flex;
   align-items: center;
