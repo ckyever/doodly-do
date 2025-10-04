@@ -1,5 +1,6 @@
 import { createTodoElement } from "./todoDisplay.js";
-import Storage from "./Storage.js"
+import Storage from "./Storage.js";
+import deleteListIcon from "./assets/delete-list.svg";
 
 export const listDisplay = {
   show() {
@@ -21,7 +22,10 @@ export const listDisplay = {
 
       const deleteList = document.createElement("button");
       deleteList.classList = "delete-list";
-      deleteList.textContent = "X";
+      const deleteImage = document.createElement("img");
+      deleteImage.classList = "delete-list icon";
+      deleteImage.src = deleteListIcon;
+      deleteList.appendChild(deleteImage);
       titleHeader.appendChild(deleteList);
 
       listCard.appendChild(titleHeader);
