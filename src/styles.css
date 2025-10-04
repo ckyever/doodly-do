@@ -160,3 +160,19 @@ li {
   top: 20px;
   right: 24px;
 }
+
+.list-item .expand-todo::after {
+  content: "v";
+}
+
+.list-item.expanded .expand-todo::after {
+  content: "^";
+}
+
+.todo-description {
+  display: none;
+}
+
+.list-item.expanded .todo-description {
+  display: block;
+}

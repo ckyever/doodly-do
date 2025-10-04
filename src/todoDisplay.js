@@ -2,8 +2,13 @@ import { format as formatDate } from "date-fns";
 
 export const createTodoElement = (todo) => {
     const listItem = document.createElement("li");
-    listItem.classList = "list-item";
+    listItem.classList = "list-item expanded";
     listItem.id = todo.id;
+
+    const expandButton = document.createElement("button");
+    expandButton.type = "button";
+    expandButton.classList = "expand-todo";
+    listItem.appendChild(expandButton);
 
     const checkBox = document.createElement("input");
     checkBox.type = "checkbox";

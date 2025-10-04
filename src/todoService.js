@@ -51,12 +51,17 @@ class TodoService {
     });
   }
 
-  listenForTodoDelete(listBoard) {
+  listenForTodoButtons(listBoard) {
     listBoard.addEventListener("click", event => {
       if (event.target.classList.contains("delete-todo")) {
         const {listIndex, todoIndex} = this.getTodoIndexFromEvent(event);
         Storage.lists[listIndex].todos.splice(todoIndex, 1);
         listDisplay.show(Storage.lists);      
+      }
+
+      if (event.target.classList.contains("expand-todo")) {
+        const listItem = event.target.closest(".list-item");
+        listItem.classList.toggle("expanded");
       }
     });
   }
