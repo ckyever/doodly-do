@@ -113,6 +113,11 @@ body {
   color: var(--main-text-color);
 }
 
+header {
+  display: flex;
+  justify-content: center;
+}
+
 ul {
   padding: 0;
 }
@@ -122,8 +127,18 @@ li {
   list-style: none;
 }
 
+.create-list {
+  display: flex;
+  align-items: center;
+  margin: 20px;
+}
+
+.create-list-icon {
+  height: 40px;
+}
+
 .list-board {
-  margin: 40px;
+  margin: 0px 40px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(var(--card-width), 1fr));
   gap: 20px;
