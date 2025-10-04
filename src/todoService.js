@@ -47,6 +47,8 @@ class TodoService {
         if (event.target.classList.contains("due-date")) {
           Storage.lists[listIndex].todos[todoIndex].dueDate = event.target.value;
         }
+
+        Storage.save();
       }
     });
   }
@@ -56,7 +58,8 @@ class TodoService {
       if (event.target.classList.contains("delete-todo")) {
         const {listIndex, todoIndex} = this.getTodoIndexFromEvent(event);
         Storage.lists[listIndex].todos.splice(todoIndex, 1);
-        listDisplay.show(Storage.lists);      
+        listDisplay.show();
+        Storage.save();
       }
 
       if (event.target.classList.contains("expand-todo")) {

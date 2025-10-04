@@ -5,7 +5,8 @@ import todoService from "./todoService.js";
 
 class ListService {
   initialise() {
-    listDisplay.show(Storage.lists);      
+    Storage.load();
+    listDisplay.show();
     this.addEventListeners();
   }
   
@@ -32,7 +33,8 @@ class ListService {
       Storage.lists.push(newList);
       newListForm.reset();
       newListDialog.close();
-      listDisplay.show(Storage.lists);      
+      listDisplay.show();
+      Storage.save();
     });
 
     listBoard.addEventListener("click", event => {
@@ -55,8 +57,10 @@ class ListService {
 
         if (event.target.classList.contains("delete-list")) {
           Storage.lists.splice(listIndex, 1);
-          listDisplay.show(Storage.lists);
+          listDisplay.show();
         }
+
+        Storage.save();
       }
     });
 
@@ -79,8 +83,6 @@ class ListService {
         }
       }
     });
-
-
 
     todoService.listenForTodoUpdates(listBoard);
     todoService.listenForTodoButtons(listBoard);

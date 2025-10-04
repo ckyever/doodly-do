@@ -1,11 +1,12 @@
 import { createTodoElement } from "./todoDisplay.js";
+import Storage from "./Storage.js"
 
 export const listDisplay = {
-  show(lists) {
+  show() {
     const listBoard = document.querySelector("div.list-board");
     listBoard.innerHTML = ""; // Clear out all current lists first
 
-    lists.forEach(currentList => {
+    Storage.lists.forEach(currentList => {
       const listCard = document.createElement("div"); 
       listCard.classList = "list-card";
       listCard.id = currentList.id;
@@ -29,10 +30,12 @@ export const listDisplay = {
       const list = document.createElement("ul");
       list.classList = "list"
 
-      currentList.todos.forEach(todo => {
-        const todoElement = createTodoElement(todo);
-        list.appendChild(todoElement);
-      });
+      if (currentList.todos) {
+        currentList.todos.forEach(todo => {
+          const todoElement = createTodoElement(todo);
+          list.appendChild(todoElement);
+        });
+      }
 
       listCard.appendChild(list);
       listBoard.appendChild(listCard);
