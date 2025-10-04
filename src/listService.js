@@ -9,6 +9,15 @@ class ListService {
     listDisplay.show();
     this.addEventListeners();
   }
+
+  getTitleOfLastAddedTodo(listElement) {
+    const todoTitles = listElement.querySelectorAll(".todo-title");
+    if (todoTitles.length > 0) {
+      return todoTitles[todoTitles.length - 1];
+    } else {
+      return null;
+    }
+  }
   
   addEventListeners() {
     const listBoard = document.querySelector("div.list-board");
@@ -48,11 +57,16 @@ class ListService {
         const listIndex = Storage.lists.findIndex(list => list.id === listId)
 
         if (event.target.classList.contains("add-todo")) {
-          const todo = todoService.addTodo(listElement);
-          const list = Storage.lists[listIndex];
-          list.addTodo(todo);
-          const todoInputs = listElement.querySelectorAll(".todo-title");
-          todoInputs[todoInputs.length - 1].focus();
+          const lastTodo = this.getTitleOfLastAddedTodo(listElement);
+
+          // Only add todo if list has none or the last one has been populated
+          if (lastTodo === null || lastTodo.value.length > 0) {
+            const todo = todoService.addTodo(listElement);
+            const list = Storage.lists[listIndex];
+            list.addTodo(todo);
+          }
+
+          this.getTitleOfLastAddedTodo(listElement).focus();
         }
 
         if (event.target.classList.contains("delete-list")) {
