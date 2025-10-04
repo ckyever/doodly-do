@@ -40,7 +40,7 @@ export const createTodoElement = (todo) => {
 
     const deleteTodo = document.createElement("button");
     deleteTodo.type = "button";
-    deleteTodo.classList = "delete";
+    deleteTodo.classList = "delete-todo";
     deleteTodo.textContent = "X";
     listItem.append(deleteTodo);
 
