@@ -241,6 +241,14 @@ button {
   display: block;
 }
 
+.delete-todo {
+  opacity: 0;
+}
+
+.list-item:hover .delete-todo {
+  opacity: 1;
+}
+
 .delete-todo.icon {
   min-width: 24px;
 }
