@@ -80,8 +80,8 @@ h6 {
 /* End of CSS Reset */
 
 :root {
-  --main-background-color: #FAF9F5;
-  --list-card-color: #FFFFFF;
+  --main-background-color: #EFECE8;
+  --list-card-color: #FAF9F5;
   --list-card-shadow: color-mix(in srgb, var(--list-card-color) 80%, black);
   --main-text-color: #1F1F1F;
   --icon-filter: invert(0);
@@ -95,7 +95,7 @@ h6 {
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --main-background-color: #262624;;
+    --main-background-color: #262624;
     --list-card-color: #30302E;
     --list-card-shadow: color-mix(in srgb, var(--list-card-color) 95%, white);
     --main-text-color: #F9F8F6;
