@@ -146,6 +146,10 @@ input {
   color: var(--main-text-color);
 }
 
+h1, h2, h3, h4 {
+  font-weight: 500;
+}
+
 .icon {
   filter: var(--icon-filter);
   cursor: pointer;
