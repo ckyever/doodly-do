@@ -91,6 +91,7 @@ h6 {
 
   --card-height: 375px;
   --card-width: 375px;
+  --container-border-radius: 50px;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -169,7 +170,7 @@ button {
   width: var(--card-width);
   background-color: var(--list-card-color);
   box-shadow: 0.5px 0.5px 5px var(--list-card-shadow);
-  border-radius: 50px;
+  border-radius: var(--container-border-radius);
   padding: 20px;
   align-self: start;
 }
@@ -192,8 +193,22 @@ button {
 
 .list-item {
   display: flex;
-  align-items: start;
+  align-items: center;
   gap: 8px;
+}
+
+.list-item:hover {
+  background-color: var(--main-background-color);
+  border-radius: var(--container-border-radius);
+}
+
+.list-item input {
+  background: none;
+  border: none;
+}
+
+.list-item input:focus {
+  outline: none;
 }
 
 .text-container {
@@ -241,12 +256,21 @@ button {
 
 .checkbox-icon {
   display: inline-block;
-  width: 20px;
-  height: 20px;
+  width: 24px;
+  height: 24px;
   background-image: url("assets/empty-circle.svg");
+}
+
+.is-complete + .checkbox-icon:hover {
+  background-image: url("assets/check-circle.svg");
+  filter: none; /* Stay the same color in dark mode */
 }
 
 .is-complete:checked + .checkbox-icon {
   background-image: url("assets/check-circle.svg");
   filter: none; /* Stay the same color in dark mode */
+}
+
+.todo-description {
+  font-size: 0.85rem;
 }
