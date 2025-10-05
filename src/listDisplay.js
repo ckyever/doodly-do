@@ -38,7 +38,7 @@ export const listDisplay = {
       addTodoImage.classList = "add-todo icon";
       addTodoImage.src = addTodoIcon;
       addTodoButton.appendChild(addTodoImage);
-      const buttonText = document.createTextNode("Add a Todo");
+      const buttonText = document.createTextNode("Doodle a Do");
       addTodoButton.appendChild(buttonText);
       listCard.appendChild(addTodoButton);
 
