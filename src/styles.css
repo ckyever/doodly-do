@@ -346,3 +346,55 @@ input.due-date {
 .todo-description {
   font-size: 0.85rem;
 }
+
+/* Create new list dialog styling */
+dialog.list-creator:modal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: none;
+  border-radius: var(--container-border-radius);
+  height: 200px;
+  gap: 16px;
+  background-color: var(--main-background-color);
+}
+
+dialog.list-creator:modal h2 {
+  color: var(--main-text-color);
+}
+
+dialog.list-creator:modal .new-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+dialog.list-creator:modal .title {
+  padding: 8px;
+  border: none;
+  background-color: var(--list-card-color);
+}
+
+dialog.list-creator:modal .title:focus {
+  outline: none;
+  border-bottom: 3px solid var(--accent-color);
+  margin-bottom: -3px;
+}
+
+dialog.list-creator:modal .button-container {
+  align-self: end;
+  display: flex;
+  gap: 8px;
+}
+
+dialog.list-creator:modal .button-container button {
+  color: var(--accent-color);
+  padding: 8px;
+  border-radius: var(--container-border-radius);
+}
+
+dialog.list-creator:modal .button-container button:hover {
+  background-color: var(--main-background-color);
+  cursor: pointer;
+}
