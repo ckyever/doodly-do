@@ -93,6 +93,7 @@ h6 {
   --card-height: 375px;
   --card-width: 375px;
   --container-border-radius: 50px;
+  --container-box-shadow: 0.5px 0.5px 5px var(--list-card-shadow);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -155,10 +156,20 @@ h1, h2, h3, h4 {
   cursor: pointer;
 }
 
-.create-list {
+button.create-list {
   display: flex;
   align-items: center;
-  margin: 20px;
+  margin: 40px;
+  padding: 8px 16px;
+  border-radius: var(--container-border-radius);
+  background-color: #CD7E5CE7;
+  color: var(--main-background-color);
+  box-shadow: var(--container-box-shadow);
+}
+
+button.create-list:hover {
+  background-color: var(--accent-color);
+  cursor: pointer;
 }
 
 .create-list.icon {
@@ -166,7 +177,7 @@ h1, h2, h3, h4 {
 }
 
 .list-board {
-  margin: 0px 40px;
+  margin: 0 40px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(var(--card-width), 1fr));
   gap: 20px;
@@ -179,7 +190,7 @@ h1, h2, h3, h4 {
   min-height: var(--card-height);
   width: var(--card-width);
   background-color: var(--list-card-color);
-  box-shadow: 0.5px 0.5px 5px var(--list-card-shadow);
+  box-shadow: var(--container-box-shadow);
   border-radius: var(--container-border-radius);
   padding: 20px;
   align-self: start;
