@@ -11,11 +11,18 @@ export const createTodoElement = (todo) => {
     expandButton.classList = "expand-todo";
     listItem.appendChild(expandButton);
 
+    // We use a label to ensure the icon will toggle the checkbox
+    const checkBoxContainer = document.createElement("label");
+    checkBoxContainer.classList = "checkbox-container";
     const checkBox = document.createElement("input");
     checkBox.type = "checkbox";
     checkBox.classList = "is-complete";
     checkBox.checked = todo.isComplete;
-    listItem.appendChild(checkBox);
+    const checkBoxImage = document.createElement("span");
+    checkBoxImage.classList = "icon checkbox-icon";
+    checkBoxContainer.appendChild(checkBox);
+    checkBoxContainer.appendChild(checkBoxImage);
+    listItem.appendChild(checkBoxContainer);
 
     const textContainer = document.createElement("div");
     textContainer.classList = "text-container";

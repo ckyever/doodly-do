@@ -234,3 +234,18 @@ button {
   width: 30px;
   filter: none; /* Stay the same colour in dark mode */
 }
+
+.is-complete {
+  opacity: 0; /* Hide default checkbox */
+}
+
+.checkbox-icon {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-image: url("assets/empty-circle.svg");
+}
+
+.is-complete:checked + .checkbox-icon {
+  background-image: url("assets/check-circle.svg");
+}
