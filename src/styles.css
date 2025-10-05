@@ -83,7 +83,7 @@ h6 {
   --main-background-color: #EFECE8;
   --list-card-color: #FAF9F5;
   --list-card-shadow: color-mix(in srgb, var(--list-card-color) 80%, black);
-  --main-text-color: #1F1F1F;
+  --main-text-color: #2b2b2b;
   --icon-filter: invert(0);
   --theme-name: light;
 
@@ -202,9 +202,8 @@ button {
   justify-content: center;
 }
 
-.due-date-label {
-  display: flex;
-  justify-content: space-between;
+.due-date {
+  width: 116px;
 }
 
 .delete-list {
@@ -233,7 +232,7 @@ button {
 
 .add-todo.icon {
   width: 30px;
-  filter: none; /* Stay the same colour in dark mode */
+  filter: none; /* Stay the same color in dark mode */
 }
 
 .is-complete {
@@ -249,4 +248,5 @@ button {
 
 .is-complete:checked + .checkbox-icon {
   background-image: url("assets/check-circle.svg");
+  filter: none; /* Stay the same color in dark mode */
 }

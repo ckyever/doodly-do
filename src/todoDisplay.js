@@ -40,15 +40,11 @@ export const createTodoElement = (todo) => {
     todoDescription.placeholder = "Description";
     textContainer.appendChild(todoDescription);
 
-    const dueDateLabel = document.createElement("label");
-    dueDateLabel.classList = "due-date-label";
-    dueDateLabel.textContent = "Due Date";
     const dueDate = document.createElement("input");
     dueDate.type = "date";
     dueDate.classList = "due-date";
     dueDate.value = todo.dueDate ?? formatDate(new Date(), "yyyy-MM-dd");
-    dueDateLabel.appendChild(dueDate);
-    textContainer.appendChild(dueDateLabel);
+    textContainer.appendChild(dueDate);
 
     listItem.appendChild(textContainer);
 
