@@ -184,7 +184,13 @@ button {
 }
 
 .delete-list.icon {
-  min-width: 28px;
+  padding: 8px;
+  min-width: 42px;
+}
+
+.delete-list:hover {
+  background-color: var(--main-background-color);
+  border-radius: var(--container-border-radius);
 }
 
 .list-title {
@@ -254,12 +260,18 @@ input.due-date {
   opacity: 0;
 }
 
+.delete-todo:hover {
+  background-color: var(--list-card-color);
+  border-radius: var(--container-border-radius);
+}
+
 .list-item:hover .delete-todo {
   opacity: 1;
 }
 
 .delete-todo.icon {
-  min-width: 24px;
+  padding: 6px;
+  min-width: 34px;
 }
 
 .add-todo {
