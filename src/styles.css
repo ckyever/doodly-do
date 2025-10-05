@@ -218,7 +218,13 @@ button {
 }
 
 .due-date {
+  cursor: pointer;
+  user-select: none;
   width: 116px;
+}
+
+.due-date::-webkit-calendar-picker-indicator {
+  cursor: pointer;
 }
 
 .delete-list {

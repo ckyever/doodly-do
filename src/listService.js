@@ -46,6 +46,19 @@ class ListService {
       Storage.save();
     });
 
+    listBoard.addEventListener("mousedown", event => {
+      console.log(`${event.target.tagName} ${event.target.type}`);
+      if (event.target.classList == "due-date") {
+        // Stop date text from being highlighted
+        event.preventDefault();
+
+        // Make clicking the text also open the calendar picker
+        if (event.target.showPicker) {
+          event.target.showPicker();
+        }
+      }
+    });
+
     listBoard.addEventListener("click", event => {
       if (
         event.target.classList.contains("add-todo") ||
