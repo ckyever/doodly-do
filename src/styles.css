@@ -190,7 +190,7 @@ button {
 
 .delete-list:hover {
   background-color: var(--main-background-color);
-  border-radius: var(--container-border-radius);
+  border-radius: 100%;
 }
 
 .list-title {
@@ -258,11 +258,12 @@ input.due-date {
 
 .delete-todo {
   opacity: 0;
+  margin-left: -8px;
 }
 
 .delete-todo:hover {
   background-color: var(--list-card-color);
-  border-radius: var(--container-border-radius);
+  border-radius: 100%;
 }
 
 .list-item:hover .delete-todo {
@@ -298,6 +299,10 @@ input.due-date {
 
 .is-complete {
   opacity: 0; /* Hide default checkbox */
+}
+
+.checkbox-container {
+  display: flex;
 }
 
 .checkbox-icon {
