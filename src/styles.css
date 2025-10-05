@@ -141,6 +141,7 @@ button {
 
 .icon {
   filter: var(--icon-filter);
+  cursor: pointer;
 }
 
 .create-list {
