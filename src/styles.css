@@ -97,6 +97,7 @@ h6 {
   --container-box-shadow: 0.5px 0.5px 5px var(--list-card-shadow);
 }
 
+/* CKYTODO Add this back in after manual light/dark toggle added
 @media (prefers-color-scheme: dark) {
   :root {
     --main-background-color: #262624;
@@ -109,6 +110,7 @@ h6 {
     --theme-name: dark;
   }
 }
+*/
 
 /* Center the dialog */
 dialog {
