@@ -142,6 +142,10 @@ button {
   color: var(--main-text-color);
 }
 
+input {
+  color: var(--main-text-color);
+}
+
 .icon {
   filter: var(--icon-filter);
   cursor: pointer;
