@@ -85,6 +85,7 @@ h6 {
   --list-card-shadow: color-mix(in srgb, var(--list-card-color) 80%, black);
   --main-text-color: #2b2b2b;
   --icon-filter: invert(0);
+  --border-color: #dddad6;
   --theme-name: light;
 
   --accent-color: #CD7E5C;
@@ -101,6 +102,7 @@ h6 {
     --list-card-shadow: color-mix(in srgb, var(--list-card-color) 95%, white);
     --main-text-color: #F9F8F6;
     --icon-filter: invert(1);
+    --border-color: #5c5a56;
     --theme-name: dark;
   }
 }
@@ -217,13 +219,20 @@ button {
   justify-content: center;
 }
 
-.due-date {
+input.due-date {
+  background-color: var(--list-card-color);
+  border: 1px solid var(--border-color);
+  border-radius: var(--container-border-radius);
+  text-align: center;
+  font-size: 0.8rem;
   cursor: pointer;
   user-select: none;
-  width: 116px;
+  width: 90px;
+  padding: 4px 0;
 }
 
 .due-date::-webkit-calendar-picker-indicator {
+  display: none;
   cursor: pointer;
 }
 
