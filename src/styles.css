@@ -241,11 +241,22 @@ button {
 
 .add-todo {
   display: flex;
+  align-items: center;
+  height: 40px;
+  width: 130px;
+  padding: 8px;
+  cursor: pointer;
   white-space: nowrap;
   color: var(--accent-color);
 }
 
+.add-todo:hover {
+  background-color: var(--main-background-color);
+  border-radius: var(--container-border-radius);
+}
+
 .add-todo.icon {
+  padding: 0;
   width: 30px;
   filter: none; /* Stay the same color in dark mode */
 }
