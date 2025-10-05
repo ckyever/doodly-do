@@ -124,8 +124,10 @@ body {
 }
 
 header {
+  margin: 40px 20px;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 ul {
@@ -153,6 +155,13 @@ h1, h2, h3, h4 {
   font-weight: 500;
 }
 
+.logo {
+  position: absolute;
+  top: 20px;
+  left: 40px;
+  width: 140px;
+}
+
 .icon {
   filter: var(--icon-filter);
   cursor: pointer;
@@ -161,7 +170,6 @@ h1, h2, h3, h4 {
 button.create-list {
   display: flex;
   align-items: center;
-  margin: 40px;
   padding: 8px 16px;
   border-radius: var(--container-border-radius);
   background-color: #CD7E5CE7;
