@@ -191,6 +191,7 @@ button {
 
 .list-item {
   display: flex;
+  align-items: start;
   gap: 8px;
 }
 
@@ -209,14 +210,6 @@ button {
   top: 20px;
   right: 24px;
   margin-left: auto;
-}
-
-.list-item .expand-todo::after {
-  content: "v";
-}
-
-.list-item.expanded .expand-todo::after {
-  content: "^";
 }
 
 .todo-description {
