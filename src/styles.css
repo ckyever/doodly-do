@@ -86,6 +86,7 @@ h6 {
   --main-text-color: #2b2b2b;
   --icon-filter: invert(0);
   --border-color: #dddad6;
+  --logo-brightness: brightness(1);
   --theme-name: light;
 
   --accent-color: #CD7E5C;
@@ -104,6 +105,7 @@ h6 {
     --main-text-color: #F9F8F6;
     --icon-filter: invert(1);
     --border-color: #5c5a56;
+    --logo-brightness: brightness(1.3);
     --theme-name: dark;
   }
 }
@@ -156,6 +158,7 @@ h1, h2, h3, h4 {
 }
 
 .logo {
+  filter: var(--logo-brightness);
   position: absolute;
   top: 20px;
   left: 40px;
