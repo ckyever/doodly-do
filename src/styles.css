@@ -193,6 +193,7 @@ input {
 }
 
 .delete-list:hover {
+  filter: none;
   background-color: var(--main-background-color);
   border-radius: 100%;
 }
@@ -266,6 +267,7 @@ input.due-date {
 }
 
 .delete-todo:hover {
+  filter: none;
   background-color: var(--list-card-color);
   border-radius: 100%;
 }
