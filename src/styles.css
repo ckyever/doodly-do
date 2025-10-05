@@ -121,10 +121,12 @@ dialog {
 }
 
 body {
+  display: flex;
+  flex-direction: column;
   background-color: var(--main-background-color);
   color: var(--main-text-color);
+  min-height: 100vh;
   max-width: 2000px;
-  margin: auto;
 }
 
 header {
@@ -132,6 +134,16 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+footer {
+  margin: 100px 0 8px 0;
+  color: var(--main-text-color);
+  font-size: 0.9rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
 }
 
 ul {
@@ -157,6 +169,10 @@ input {
 
 h1, h2, h3, h4 {
   font-weight: 500;
+}
+
+.content {
+  flex: 1;
 }
 
 .logo {
@@ -367,6 +383,10 @@ input.due-date {
 
 .todo-description {
   font-size: 0.85rem;
+}
+
+.github-icon {
+  min-width: 24px;
 }
 
 /* Create new list dialog styling */
