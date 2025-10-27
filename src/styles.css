@@ -80,8 +80,8 @@ h6 {
 /* End of CSS Reset */
 
 :root {
-  --main-background-color: #EFECE8;
-  --list-card-color: #FAF9F5;
+  --main-background-color: #efece8;
+  --list-card-color: #faf9f5;
   --list-card-shadow: color-mix(in srgb, var(--list-card-color) 80%, black);
   --main-text-color: #2b2b2b;
   --icon-filter: invert(0);
@@ -89,7 +89,7 @@ h6 {
   --logo-brightness: brightness(1);
   --theme-name: light;
 
-  --accent-color: #CD7E5C;
+  --accent-color: #cd7e5c;
 
   --card-height: 375px;
   --card-width: 375px;
@@ -167,7 +167,10 @@ input {
   color: var(--main-text-color);
 }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   font-weight: 500;
 }
 
@@ -200,7 +203,7 @@ button.create-list {
   align-items: center;
   padding: 8px 16px;
   border-radius: var(--container-border-radius);
-  background-color: #CD7E5CE7;
+  background-color: var(--accent-color);
   color: var(--main-background-color);
   box-shadow: var(--container-box-shadow);
 }
@@ -307,7 +310,8 @@ input.due-date {
   margin-left: auto;
 }
 
-.todo-title, .todo-description {
+.todo-title,
+.todo-description {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
