@@ -451,3 +451,23 @@ dialog.list-creator:modal .button-container button:hover {
   background-color: var(--main-background-color);
   cursor: pointer;
 }
+
+@media (max-width: 600px) {
+  :root {
+    --card-width: 325px;
+  }
+
+  .logo {
+    top: 10px;
+    left: 10px;
+    width: 100px;
+  }
+
+  input.due-date {
+    width: 98px;
+  }
+
+  .list-board {
+    margin: 0;
+  }
+}
